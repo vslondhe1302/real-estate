@@ -1,0 +1,26 @@
+let express = require("express")
+const { localityRoutes } = require("./localityRoutes")
+const { propertyTypeRoutes } = require("./propertyTypeRoutes")
+const { subPropertyTypeRoutes } = require("./subPropertyTypeRoutes")
+const { servicesRoutes } = require("./servicesRoutes")
+const { subServicesRoutes } = require("./subServicesRoutes")
+const { testimonialRoutes } = require("./testimonialRoutes")
+const { amenitiesRoutes } = require("./amenityRoutes")
+const { propertiesRoutes } = require("./propertiesRoutes")
+const { companyProfileRoutes } = require("./companyProfileRoutes")
+const { enquiryRoutes } = require("./enquiryRoutes")
+
+let adminRoutes = express.Router()
+
+adminRoutes.use('/locality', localityRoutes)
+adminRoutes.use('/property-type', propertyTypeRoutes)
+adminRoutes.use('/sub-property-type', subPropertyTypeRoutes)
+adminRoutes.use('/services', servicesRoutes)
+adminRoutes.use('/sub-services', subServicesRoutes)
+adminRoutes.use('/testimonial', testimonialRoutes)
+adminRoutes.use('/amenities', amenitiesRoutes)
+adminRoutes.use('/properties', propertiesRoutes)
+adminRoutes.use('/company-profile', companyProfileRoutes)
+adminRoutes.use('/enquiries', enquiryRoutes)
+
+module.exports = {adminRoutes}

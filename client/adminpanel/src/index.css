@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.profile:hover .profilelist{
+       display: block;
+       visibility: visible;
+}
+
+.company-profile::-webkit-scrollbar{
+       display: none;
+}
+.company-profile{
+       overflow-x: scroll;
+}

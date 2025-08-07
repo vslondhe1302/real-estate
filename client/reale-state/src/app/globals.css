@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary_text_color : rgb(33, 37, 41);
+  --nav_btn_bg : rgb(42, 35, 84);
+  --txt_color_1 : rgb(42, 35, 84);
+  --txt_color_2 : rgb(221, 56, 70);
+  --txt_color_3 : rgb(77, 76, 84);
+  --txt_color_4 : rgb(153, 152, 157);
+  --txt_color_5 : rgb(33, 31, 41);
+  --txt_color_6 : rgb(38, 32, 46);
+  --txt_color_7 : rgb(38, 32, 76);
+  --txt_color_8 : rgb(18, 15, 35);
+  --txt_color_9 : rgb(23, 19, 46);
+  --txt_color_10 : rgb(106, 105, 112);
+  --nav_active_bg : rgb(255, 241, 241);
+  --nav_active_txt : rgb(221, 56, 70);
+  --light_dark_bg : rgba(0, 0, 0, 0.4);
+  --md_dark_bg : rgba(0, 0, 0, 0.5);
+  --red_btn_bg : rgb(221, 56, 70);
+  --red_bg : rgb(221, 56, 70);
+  --red_border : rgb(221, 56, 70);
+  --dark_btn_bg : rgb(18, 15, 35);
+}
+
+
+
+@theme {
+  --font-alkatra: "Alkatra", system-ui; 
+}
+
+@theme {
+  --shadow-2xl: 0px 0px 35px 4px rgba(0, 0, 0, 0.25); 
+  --shadow-my-lg : 0px 0px 50px 30px rgba(0, 0, 0, 0.35);
+  --shadow-inset : inset 0px -50px 80px 0px rgba(0, 0, 0, 0.7);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.hide-scrollbar{
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
+.main-menu>li:hover{
+  background-color: var(--nav_active_bg);
+}
+
+.main-menu{
+  position: relative;
+}
+.main-menu .mega-menu{
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  z-index: 10;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+}
+.main-menu:hover .mega-menu{
+  transform: scaleY(1);
+  visibility: visible;
+  opacity: 1;
+}
+
+.post-property{
+  width: 100%;
+  background: url('/images/property-bg-1.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+#impact-property .slick-dots li button:before {
+    content: "•";
+    text-align: center;
+    opacity: .25;
+    color: var(--red_btn_bg) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-family: slick;
+    font-size: 10px !important;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left:0;
+    margin-top: 20px !important;
+}
+#impact-property .slick-dots li.slick-active button:before {
+    opacity: .80 !important;
+    color:var(--nav_active_txt) !important;
+}
+
+
+#founder-journey .slick-dots li button:before {
+    color: var(--red_btn_bg) !important;
+    width: 6px !important;
+    height: 6px !important;
+    padding: 0px !important;
+    font-size: 7px !important;
+    line-height: 16px;
+    margin-top: 4px !important;
+    margin-right: 0px !important;
+}
+#founder-journey .slick-dots li.slick-active button:before {
+    opacity: .80 !important;
+    color:var(--nav_active_txt) !important;
+}
+
+#founder-journey .slick-dots li{
+  padding: 0px !important;
+}
+
+.property-dealer{
+  background: url('/images/property-dealer.svg');
+}
+
+.testimonial{
+  background-image:conic-gradient(from 180deg at 50% 50%, rgb(255, 255, 255) 0deg, rgb(221, 56, 70) 1turn);
+
+}
