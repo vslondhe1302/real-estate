@@ -1,5 +1,4 @@
 "use client"
-import React, { useEffect, useState } from 'react'
 import Banner from './(website)/home-page/home-page-components/Banner'
 import ImpactfulProperties from './(website)/home-page/home-page-components/ImpactfulProperties'
 import PostPropertySection from './(website)/home-page/home-page-components/PostPropertySection'
@@ -8,6 +7,7 @@ import PropertyDealer from './(website)/home-page/home-page-components/PropertyD
 import WhyChooseSection from './(website)/home-page/home-page-components/WhyChooseSection'
 import HappyCustomer from './(website)/home-page/home-page-components/HappyCustomer'
 import Testimonial from './(website)/home-page/home-page-components/Testimonial'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function page() {
@@ -21,10 +21,6 @@ export default function page() {
 
   let [localityList, setLocalityList] = useState([])
   let [localityname, setLocalityname] = useState('')
-
-  console.log(localityname);
-
-
 
   let apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL
 

@@ -121,7 +121,6 @@ let viewProperties = async (req, res) => {
     }
     if (filters.propertyPrice) {
         let price = parseFloat(filters.propertyPrice) * 10000000
-        console.log(price);
 
         searchObj['propertyPrice'] = { $gte: price, $lte: price + 9999999 }
     }
@@ -144,19 +143,15 @@ let viewProperties = async (req, res) => {
 }
 
 let viewPropertiesByType = async (req, res) => {
-    let { ptype } = req.params
-    console.log(req.query);
-    
+    let { ptype } = req.params    
 
     if (ptype || req.query.propertyType) {
         let ptype_id = await propertyTypeModel.findOne({ slug: ptype }).select("_id")
-        console.log(ptype_id);
 
          let sub_id = await subPropertyTypeModel.findOne({ subPropertyTypeName: req.query.propertyType }).select("_id")
-        console.log(sub_id);
 
 
-        let data = await propertiesModel.find({ $or:[ {parentPropertyType: ptype_id},{subPropertyType: sub_id}]})
+        let data = await propertiesModel.find({ $or:[{parentPropertyType: ptype_id},{subPropertyType: sub_id}]})
             .populate("parentPropertyType", "propertyTypeName")
             .populate("subPropertyType", "subPropertyTypeName")
             .populate("propertyLocality", "localityName")
@@ -217,7 +212,7 @@ let viewImpactfulProperties = async (req, res) => {
 
 let insertEnquiryData = async (req, res) => {
     let { name, email, phone,type, country_code, property_id, property } = req.body
-    console.log(req.body);
+
     let obj
     let insertObj = {
         name,

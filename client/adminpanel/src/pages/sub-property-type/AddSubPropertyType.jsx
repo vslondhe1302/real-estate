@@ -124,7 +124,7 @@ export default function AddSubPropertyType() {
                                 }} name="parentPropertyType" value={formData.parentPropertyType.propertyTypeName} id="" className='px-[12px] w-[100%] h-[45px] rounded-[6px] text-gray-800 border-2 border-gray-300'>
                                     <option value="Select Category">Nothing Selected</option>
 
-                                    {propertTypes.length >= 1 &&
+                                    {propertTypes?.length >= 1 &&
                                         propertTypes.map((items, idx) => <option selected={formData.parentPropertyTypeId == items._id} key={idx} value={items._id}>{items.propertyTypeName}</option>
                                         )
                                     }

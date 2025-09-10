@@ -1,10 +1,10 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import FilterProperties from './listed-properties-components/Filter-Properties'
 import ListedPropertiesArea from './listed-properties-components/Listed-Properties-Area'
 import PostPropertySection from '../home-page/home-page-components/PostPropertySection'
 import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function page() {
   let [showResFilter, setShowResFilter] = useState(false)
